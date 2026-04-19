@@ -20,14 +20,14 @@ export default function AboutPage() {
           </div>
           
           <div className="about-hero-right">
-            <h1 className="hero-title">
+            <h1 className="about-title">
               Protecting What Matters,
               <br />
-              <span className="hero-title-italic">Advancing What&apos;s Next.</span>
+              <span className="hero-title-blue">Advancing What&apos;s Next.</span>
             </h1>
             
-            <p className="hero-description">
-              At CyberVeil, we don&apos;t just secure, we innovate. Our unique approach blends 
+            <p className="about-description">
+              At Cyberval, we don&apos;t just secure; we innovate. Our unique approach blends 
               cutting-edge cybersecurity solutions with a forward-thinking mindset. Trust us 
               to safeguard your digital assets while propelling your technological resilience.
             </p>
@@ -76,7 +76,7 @@ export default function AboutPage() {
       <section className="commitment-section">
         <span className="commitment-label">OUR COMMITMENT</span>
         <h2 className="commitment-heading">
-          Built on Trust. Driven by <span className="underline-text">Security.</span>
+          Built on Trust. Driven by <span className="blue-text">Security.</span>
         </h2>
         <p className="commitment-subtext">
           Delivering secure, innovative, and trusted cybersecurity solutions you can rely on.

@@ -32,3 +32,23 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+body {
+  background-color: #030814; /* Dark body background to match the cyber aesthetic on ultra-wide screens */
+}
+
+/* 
+  Global Layout Constraint:
+  Ensures the UI doesn't stretch beyond 1460px on ultra-wide screens,
+  keeping all sections perfectly centered as per requirements.
+*/
+.global-wrapper {
+  max-width: 1460px;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  position: relative;
+  background-color: #ffffff; /* Base internal color, sections override this */
+  display: flex;
+  flex-direction: column;
+}

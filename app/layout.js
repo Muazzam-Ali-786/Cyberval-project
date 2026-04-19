@@ -18,9 +18,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${outfit.className} ${manrope.variable} ${sora.variable}`}>
-        <Header />
-        {children}
-        <Footer />
+        <div className="global-wrapper">
+          <Header />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );
