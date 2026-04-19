@@ -10,9 +10,13 @@
   "dependencies": {
     "next": "16.2.4",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "tailwind": "^4.0.0"
   },
   "devDependencies": {
-    "babel-plugin-react-compiler": "1.0.0"
+    "autoprefixer": "^10.5.0",
+    "babel-plugin-react-compiler": "1.0.0",
+    "postcss": "^8.5.10",
+    "tailwindcss": "^4.2.2"
   }
 }
