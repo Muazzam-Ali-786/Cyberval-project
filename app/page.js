@@ -1,5 +1,7 @@
-export default function Home(){
-  return(
-    <h1>hellow world</h1>
-  )
+import About from "./about/page";
+
+export default function Home() {
+  return (
+    <About />
+  );
 }
