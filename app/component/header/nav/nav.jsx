@@ -41,7 +41,7 @@ export default function Nav() {
                 
                 <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
                     <li><Link href="/" className="active" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
-                    <li><Link href="/about" onClick={() => setIsMenuOpen(false)}>About us</Link></li>
+                    <li><Link href="/About" onClick={() => setIsMenuOpen(false)}>About us</Link></li>
                     <li className={`dropdown ${activeDropdown === 'services' ? 'active' : ''}`}>
                         <Link href="/" onClick={(e) => toggleDropdown(e, 'services')}>Services <span className="arrow">▾</span></Link>
                         <div className="mega-menu">

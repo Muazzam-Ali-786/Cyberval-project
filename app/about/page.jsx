@@ -1,53 +1,37 @@
-import './about.css'
+"use client";
+import './about-page.css';
+import '../component/about/about.css'; // Original styles for stats/commitment
+import Link from 'next/link';
 
-export default function AboutPage() {
+export default function About() {
   return (
-    <div className="about-page">
-      {/* Hero Section */}
-      <section className="about-hero">
-        <div className="about-hero-container">
-          <div className="about-hero-left">
-            <span className="about-badge">ABOUT US</span>
-            
-            {/* Using exact SVG from Figma */}
-            <div className="radar-wrapper">
-              <img 
-                src="/images/radar-graphic.svg" 
-                alt="Security Radar" 
-                className="radar-image"
-              />
-            </div>
+    <div className="about-page-container">
+      {/* Hero Section of About Page (Custom Dark Style from Screenshot) */}
+      <section className="about-hero-section">
+        <div className="hero-background-effects">
+          <div className="light-beam lb-1"></div>
+          <div className="light-beam lb-2"></div>
+          <div className="light-beam lb-3"></div>
+          <div className="spotlight"></div>
+        </div>
+        
+        <div className="about-hero-content">
+          <div className="about-badge-wrapper">
+             <span className="about-badge-pill">ABOUT US</span>
           </div>
           
-          <div className="about-hero-right">
-            <h1 className="about-title">
-              Protecting What Matters,
-              <br />
-              <span className="hero-title-blue">Advancing What&apos;s Next.</span>
-            </h1>
-            
-            <p className="about-description">
-              At Cyberval, we don&apos;t just secure; we innovate. Our unique approach blends 
-              cutting-edge cybersecurity solutions with a forward-thinking mindset. Trust us 
-              to safeguard your digital assets while propelling your technological resilience.
-            </p>
-            
-            <div className="mission-block">
-              <h2 className="mission-heading">Our Mission</h2>
-              <h3 className="mission-subheading">Fortifying Excellence through Advanced Cybersecurity Solutions</h3>
-              <p className="mission-description">
-                At the core of our mission is a dedication to empowering organizations with 
-                transformative solutions, enhancing performance, optimizing operations, and 
-                fortifying the security of their digital assets.
-              </p>
-            </div>
-            
-            <button className="btn-read-more">Read More</button>
-          </div>
+          <h1 className="about-hero-title">
+            Reliable Cybersecurity, Exceptional Service
+          </h1>
+          
+          <p className="about-hero-desc">
+            We partner with organizations to design, implement, and sustain 
+            security programs that are practical, measurable, and resilient.
+          </p>
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Stats Section (Restored from original component) */}
       <section className="stats-section">
         <div className="stats-container">
           <div className="stat-box">
@@ -72,25 +56,63 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Commitment Section */}
-      <section className="commitment-section">
-        <span className="commitment-label">OUR COMMITMENT</span>
-        <h2 className="commitment-heading">
-          Built on Trust. Driven by <span className="blue-text">Security.</span>
-        </h2>
-        <p className="commitment-subtext">
-          Delivering secure, innovative, and trusted cybersecurity solutions you can rely on.
-        </p>
-        
-        {/* Using exact SVG from Figma for commitment cards */}
-        <div className="cards-svg-wrapper">
-          <img 
-            src="/images/commitment-cards.svg" 
-            alt="Our Commitment Features" 
-            className="cards-image"
-          />
+      {/* Our Journey Section */}
+      <section className="journey-section">
+        <div className="journey-container">
+          <h2 className="journey-title">
+            Our <span className="blue-text-journey">Journey</span>
+          </h2>
+          
+          <div className="journey-content">
+            <p>
+              Cybervol was founded on a simple idea: modern businesses need security partners 
+              who understand both technology and strategy. We bridge that gap—helping teams 
+              protect what matters without slowing innovation.
+            </p>
+            <p>
+              From advisory to implementation, we focus on clarity, speed, and measurable impact—
+              so boards, executives, and technical teams can move forward with confidence.
+            </p>
+          </div>
         </div>
       </section>
+
+      {/* Our Mission Section */}
+      <section className="mission-section">
+        <div className="mission-container">
+          <div className="mission-left">
+            <div className="radar-graphic-wrapper">
+              <img 
+                src="/images/radar-graphic.svg" 
+                alt="Security Radar" 
+                className="radar-graphic"
+              />
+            </div>
+          </div>
+          
+          <div className="mission-right">
+            <div className="mission-badge-wrapper">
+              <span className="mission-badge">OUR MISSION</span>
+            </div>
+            
+            <h2 className="mission-heading">
+              Safeguarding Your Business with Advanced <span className="blue-text-mission">Cyber Solutions</span>
+            </h2>
+            
+            <h3 className="mission-subheading">
+              Fortifying Excellence through Advanced Cybersecurity Solutions
+            </h3>
+            
+            <p className="mission-description">
+              At the crux of our mission is a dedication to empowering organizations with 
+              transformative solutions, enhancing performance, optimizing operations, and 
+              fortifying the security of their digital assets.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    
     </div>
-  )
+  );
 }
