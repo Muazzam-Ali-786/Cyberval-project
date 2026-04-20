@@ -34,7 +34,7 @@ export default function Hero() {
                 </div>
                 
                 <div className="hero-image">
-                    <img src="/images/header-items/hero/earth.gif" alt="Earth Globe" />
+                    <img src="/images/header-items/hero/earth.png" alt="Earth Globe" />
                 </div>
             </div>
 

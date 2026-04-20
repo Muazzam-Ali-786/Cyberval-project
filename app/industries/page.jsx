@@ -1,8 +1,12 @@
 "use client";
 
+import { useRef, useState } from 'react';
 import './industries.css';
 
 export default function Industries() {
+  const scrollRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
   const industryCards = [
     {
       id: 1,
@@ -29,24 +33,38 @@ export default function Industries() {
       id: 4,
       title: "Energy, Utilities & Critical Infrastructure",
       desc: "Operational technology awareness and controls ensuring reliability in regulated environments.",
-      image: "/images/pages/industry/card-image-1.svg", // Placeholder
-      icon: "/images/pages/industry/card-icon-1.svg" // Placeholder
+      image: "/images/pages/industry/card-image-4.png",
+      icon: "/images/pages/industry/card-icon-4.svg"
     },
-    {
-      id: 5,
-      title: "Retail, Logistics & E-commerce",
-      desc: "Safeguarding transactions, supply chains, and customer trust across stores, warehouses, and digital storefronts.",
-      image: "/images/pages/industry/card-image-2.svg", // Placeholder
-      icon: "/images/pages/industry/card-icon-2.svg" // Placeholder
-    },
-    {
-      id: 6,
-      title: "Professional & Enterprise Services",
-      desc: "Governance, identity, and data protection for legal, consulting, and multi-site enterprises with distributed workforces.",
-      image: "/images/pages/industry/card-image-3.svg", // Placeholder
-      icon: "/images/pages/industry/card-icon-3.svg" // Placeholder
-    }
   ];
+
+  const handleScroll = () => {
+    if (!scrollRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+    if (scrollWidth <= clientWidth) return;
+
+    const maxScroll = scrollWidth - clientWidth;
+    const progress = scrollLeft / maxScroll;
+    
+    // Calculate which card is most visible (assuming 4 cards total)
+    const newIndex = Math.round(progress * (industryCards.length - 1));
+    setActiveIndex(newIndex);
+  };
+
+  const scrollToDot = (index) => {
+    if (!scrollRef.current) return;
+    const { scrollWidth, clientWidth } = scrollRef.current;
+    const maxScroll = scrollWidth - clientWidth;
+    
+    // Target scroll position for the dot
+    const target = (maxScroll / (industryCards.length - 1)) * index;
+    
+    scrollRef.current.scrollTo({
+      left: target,
+      behavior: 'smooth'
+    });
+    setActiveDot(index); // Note: activeIndex is derived from scroll, but setting it here for instant feedback
+  };
 
   return (
     <section className="industries-section">
@@ -63,33 +81,49 @@ export default function Industries() {
           </div>
         </div>
 
-        <div className="industries-cards-row">
-          {industryCards.map((card) => (
-            <div key={card.id} className="industry-card">
-              <div className="industry-card-image-area">
-                <div className="industry-image-wrapper">
-                  <img src={card.image} alt={card.title} className="industry-main-image" />
-                </div>
-                
-                {card.icon && (
-                  <div className="industry-icon-box">
-                    <img src={card.icon} alt="Icon" className="industry-card-icon" />
+        <div className="industries-slider-viewport">
+          <div 
+            className="industries-cards-row" 
+            ref={scrollRef}
+            onScroll={handleScroll}
+          >
+            {industryCards.map((card) => (
+              <div key={card.id} className="industry-card-wrapper">
+                <div className="industry-card">
+                  <div className="industry-card-image-area">
+                    <div className="industry-image-wrapper">
+                      <img src={card.image} alt={card.title} className="industry-main-image" />
+                    </div>
+                    
+                    {card.icon && (
+                      <div className="industry-icon-box">
+                        <img src={card.icon} alt="Icon" className="industry-card-icon" />
+                      </div>
+                    )}
                   </div>
-                )}
+                  <div className="industry-card-content">
+                    <h3 className="industry-card-title">{card.title}</h3>
+                    <p className="industry-card-desc">{card.desc}</p>
+                  </div>
+                </div>
               </div>
-              <div className="industry-card-content">
-                <h3 className="industry-card-title">{card.title}</h3>
-                <p className="industry-card-desc">{card.desc}</p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         <div className="industries-dots">
-          <div className="slider-dots">
-            <span className="dot active"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
+          <div className="slider-indicator-bar">
+            {industryCards.map((_, i) => (
+              <div 
+                key={i} 
+                className="indicator-segment"
+                onClick={() => scrollToDot(i)}
+              ></div>
+            ))}
+            <div 
+              className="indicator-active-thumb" 
+              style={{ left: `${(activeIndex / (industryCards.length - 1)) * 75}%` }}
+            ></div>
           </div>
         </div>
       </div>
