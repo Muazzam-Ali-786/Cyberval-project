@@ -7,14 +7,14 @@ import "./footer.css";
 export default function Footer() {
   const pathname = usePathname();
   const isServiceOnePage = pathname === "/services/service-1";
-  const isAboutTwoPage = pathname === "/About2";
+  const isAboutPage = pathname === "/About2" || pathname === "/About-us";
 
   return (
     <footer className="footer">
       <div className="footer-main-wrapper">
         <div className="footer-container">
       
-      {!isAboutTwoPage && (
+      {!isAboutPage && (
         <div className={`footer-cta-banner ${isServiceOnePage ? "service-one-banner" : ""}`}>
           <div className="footer-cta-content">
             <h2 className="footer-cta-title">
