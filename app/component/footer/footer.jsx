@@ -14,32 +14,31 @@ export default function Footer() {
       <div className="footer-main-wrapper">
         <div className="footer-container">
       
-      {!isAboutPage && (
-        <div className={`footer-cta-banner ${isServiceOnePage ? "service-one-banner" : ""}`}>
-          <div className="footer-cta-content">
-            <h2 className="footer-cta-title">
-              {isServiceOnePage ? "Contact Us Today" : "Ready to Secure Your Business?"}
-            </h2>
-            <p className="footer-cta-desc">
-              {isServiceOnePage ? (
-                <>
-                  Ready to strengthen your cybersecurity posture?
-                  <br />
-                  Get in touch and we'll help you find the right solution.
-                </>
-              ) : (
-                <>
-                  Protect your digital assets with expert-driven cybersecurity
-                  solutions <br /> tailored to your needs.
-                </>
-              )}
-            </p>
-          </div>
-          <button className="footer-cta-btn">
-            {isServiceOnePage ? "Contact Us" : "Talk to Our Experts"}
-          </button>
+      <div className="footer-cta-banner">
+        <div className="footer-cta-content">
+          <h2 className="footer-cta-title">
+            {isAboutPage ? (
+              <>Ready to talk about your <br /> security goals?</>
+            ) : isServiceOnePage ? (
+              "Contact Us Today"
+            ) : (
+              "Ready to Secure Your Business?"
+            )}
+          </h2>
+          <p className="footer-cta-desc">
+            {isAboutPage ? (
+              <>Share where you are today and where you'd like to be, <br /> we'll help you plan the next steps.</>
+            ) : isServiceOnePage ? (
+              <>Ready to strengthen your cybersecurity posture? <br /> Get in touch and we'll help you find the right solution.</>
+            ) : (
+              <>Protect your digital assets with expert-driven cybersecurity solutions <br /> tailored to your needs.</>
+            )}
+          </p>
         </div>
-      )}
+        <Link href="/contact" className="footer-cta-btn">
+          {isAboutPage ? "Contact Us" : isServiceOnePage ? "Contact Us" : "Talk to Our Experts"}
+        </Link>
+      </div>
 
    
       <div className="footer-content">

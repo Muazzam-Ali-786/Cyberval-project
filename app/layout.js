@@ -16,7 +16,7 @@ const sora = Sora({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body className={`${outfit.className} ${manrope.variable} ${sora.variable}`}>
         <div className="global-wrapper">
           <Header />

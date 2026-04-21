@@ -1108,23 +1108,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="cta-section">
-        <div className="cta-container">
-          <div className="cta-card">
-            <h2 className="cta-title">Ready to talk about your <br /> security goals?</h2>
-            <p className="cta-description">
-              Share where you are today and where you'd like to be, <br />
-              we'll help you plan the next steps.
-            </p>
-            <div className="cta-button-wrapper">
-              <Link href="/contact" className="cta-button">
-                Contact Us
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
