@@ -32,40 +32,41 @@ export default function Faq() {
   return (
     <section className="faq-section">
       <div className="faq-container">
-        <div className="faq-layout">
-          {/* Left Column: Content */}
-          <div className="faq-header-column">
+        <div className="faq-left">
+          <div className="faq-badge-wrapper">
             <span className="faq-badge">FAQ'S</span>
-            <h2 className="faq-title">Frequently Asked Questions</h2>
-            <p className="faq-subtitle">
-              Quick answers to common questions about how we work with clients.
-            </p>
-            <button className="view-all-faqs-btn">View all FAQs</button>
           </div>
+          <h2 className="faq-title">
+            Frequently Asked <br />
+            <span className="blue-text-faq">Questions</span>
+          </h2>
+          <p className="faq-description">
+            Quick answers to common questions about how we work with clients.
+          </p>
+          <button className="faq-view-all">View all FAQ's</button>
+        </div>
 
-          {/* Right Column: Accordion */}
-          <div className="faq-accordion-column">
+        <div className="faq-right">
+          <div className="faq-accordion">
             {faqData.map((item, index) => (
               <div 
                 key={index} 
-                className={`faq-item ${openIndex === index ? 'open' : ''}`}
+                className={`faq-item ${openIndex === index ? 'active' : ''}`}
               >
                 <div 
-                  className="faq-question-row" 
+                  className="faq-question" 
                   onClick={() => toggleAccordion(index)}
                 >
-                  <h3 className="faq-question">{item.question}</h3>
+                  <h4>{item.question}</h4>
                   <span className="faq-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M7 10L12 15L17 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
+                    <img src="/Arrow 6.svg" alt="Toggle FAQ" />
                   </span>
                 </div>
-                <div className="faq-answer-row">
-                  <div className="faq-answer-content">
-                    <p className="faq-answer">{item.answer}</p>
+                {openIndex === index && (
+                  <div className="faq-answer">
+                    <p>{item.answer}</p>
                   </div>
-                </div>
+                )}
               </div>
             ))}
           </div>

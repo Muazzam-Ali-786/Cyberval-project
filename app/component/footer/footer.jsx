@@ -1,22 +1,45 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import "./footer.css";
 
 export default function Footer() {
+  const pathname = usePathname();
+  const isServiceOnePage = pathname === "/services/service-1";
+  const isAboutTwoPage = pathname === "/About2";
+
   return (
     <footer className="footer">
       <div className="footer-main-wrapper">
         <div className="footer-container">
       
-      <div className="footer-cta-banner">
-        <div className="footer-cta-content">
-          <h2 className="footer-cta-title">Ready to Secure Your Business?</h2>
-          <p className="footer-cta-desc">
-            Protect your digital assets with expert-driven cybersecurity
-            solutions <br /> tailored to your needs.
-          </p>
+      {!isAboutTwoPage && (
+        <div className={`footer-cta-banner ${isServiceOnePage ? "service-one-banner" : ""}`}>
+          <div className="footer-cta-content">
+            <h2 className="footer-cta-title">
+              {isServiceOnePage ? "Contact Us Today" : "Ready to Secure Your Business?"}
+            </h2>
+            <p className="footer-cta-desc">
+              {isServiceOnePage ? (
+                <>
+                  Ready to strengthen your cybersecurity posture?
+                  <br />
+                  Get in touch and we'll help you find the right solution.
+                </>
+              ) : (
+                <>
+                  Protect your digital assets with expert-driven cybersecurity
+                  solutions <br /> tailored to your needs.
+                </>
+              )}
+            </p>
+          </div>
+          <button className="footer-cta-btn">
+            {isServiceOnePage ? "Contact Us" : "Talk to Our Experts"}
+          </button>
         </div>
-        <button className="footer-cta-btn">Talk to Our Experts</button>
-      </div>
+      )}
 
    
       <div className="footer-content">

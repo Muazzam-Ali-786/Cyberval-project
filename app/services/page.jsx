@@ -157,11 +157,13 @@ export default function ServicesPage() {
                     <div className="card-line"></div>
                     <p className="card-text">{card.desc}</p>
                     
-                    <button className="card-btn" aria-label={`Learn more about ${card.title}`}>
+                    <button className="card-btn"  
+                         aria-label={`Learn more about ${card.title}`}>
                       <img 
                         src={hoveredIndex === index ? card.hoverIcon : card.defaultIcon} 
                         alt="Arrow Icon" 
                         className="card-btn-icon"
+                       
                       />
                     </button>
                   </div>

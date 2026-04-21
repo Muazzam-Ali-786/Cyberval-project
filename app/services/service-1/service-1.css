@@ -1,0 +1,323 @@
+/* app/services/service-1/service-1.css */
+
+.service-page-container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #ffffff;
+}
+
+.service-hero-section {
+    position: relative;
+    width: 100%;
+    height: 558px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-image: url('/aboutBg.svg');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px 60px;
+    text-align: center;
+}
+
+.service-hero-background-effects {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.service-spotlight {
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+    filter: blur(100px);
+    z-index: 2;
+}
+
+.service-light-beam {
+    position: absolute;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15), transparent);
+    filter: blur(40px);
+    z-index: 3;
+    opacity: 0.4;
+}
+
+.service-lb-1 {
+    top: -10%;
+    right: 20%;
+    width: 150px;
+    height: 120%;
+    transform: rotate(-25deg);
+}
+
+.service-lb-2 {
+    top: -20%;
+    left: 15%;
+    width: 80px;
+    height: 140%;
+    transform: rotate(15deg);
+}
+
+.service-lb-3 {
+    top: -5%;
+    right: 5%;
+    width: 200px;
+    height: 100%;
+    transform: rotate(-10deg);
+}
+
+.service-hero-content {
+    max-width: 760px;
+    position: relative;
+    z-index: 5;
+}
+
+.service-badge-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.service-badge-pill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 128px;
+    height: 38px;
+    border-radius: 27.61px;
+    border: 0.81px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    font-family: var(--font-manrope), sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 36.54px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    backdrop-filter: blur(4px);
+    padding: 0;
+}
+
+.service-hero-title {
+    font-family: var(--font-sora), sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 57px;
+    letter-spacing: 0;
+    text-align: center;
+    margin-bottom: 24px;
+    text-wrap: balance;
+    max-width: 606px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.service-hero-desc {
+    font-family: var(--font-manrope), sans-serif; 
+    font-size: 18px;
+    line-height: 30px;
+    letter-spacing: 0;
+    text-align: center;
+    font-weight: 400;
+    color: #EEEEEE;
+    margin: 0;
+}
+
+/* Capabilities Section */
+.capabilities-section {
+    padding: 100px 20px 120px;
+    background: #ffffff;
+}
+
+.capabilities-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.capabilities-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 48px;
+    gap: 40px;
+}
+
+.capabilities-title {
+    font-family: var(--font-sora), sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #111827;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.blue-text-capabilities {
+    color: #2b598d;
+}
+
+.capabilities-header-desc {
+    font-family: var(--font-manrope), sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #4B5563;
+    max-width: 500px;
+    margin: 0;
+}
+
+.capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.capability-card {
+    background: #ffffff;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.capability-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.capability-card-large {
+    grid-column: span 2;
+    background: radial-gradient(circle at 100% 50%, #eff6ff 0%, #ffffff 100%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.capability-content {
+    position: relative;
+    z-index: 2;
+}
+
+.capability-card-large .capability-content {
+    max-width: 50%;
+}
+
+.capability-content h3 {
+    font-family: var(--font-sora), sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 12px;
+}
+
+.capability-content p {
+    font-family: var(--font-manrope), sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #4B5563;
+    margin: 0;
+}
+
+.capability-icon-wrapper {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    width: 40px;
+    height: 40px;
+    background: #2b598d;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px -1px rgba(43, 89, 141, 0.2);
+}
+
+.large-icon-wrapper {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    height: auto;
+    background: transparent;
+    box-shadow: none;
+    bottom: auto;
+}
+
+.capability-shield-icon {
+    width: 280px;
+    height: auto;
+    opacity: 1;
+}
+
+.capability-corner-icon {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1); /* Makes the icon white on blue bg */
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .capabilities-header {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .capabilities-header-desc {
+        max-width: 100%;
+        text-align: left;
+    }
+    .capabilities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .capability-card-large {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .capabilities-grid {
+        grid-template-columns: 1fr;
+    }
+    .capability-card-large {
+        grid-column: span 1;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 220px; /* Space for the big icon */
+    }
+    .capability-card-large .capability-content {
+        max-width: 100%;
+    }
+    .large-icon-wrapper {
+        top: auto;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        right: auto;
+    }
+    .capability-shield-icon {
+        width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .capabilities-title {
+        font-size: 24px;
+    }
+    .capability-card {
+        padding: 24px;
+    }
+}
