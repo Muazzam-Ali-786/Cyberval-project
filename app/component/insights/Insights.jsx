@@ -25,27 +25,7 @@ const insightsData = [
     image: "/images/pages/news-insights/image 3.jpg",
     link: "#"
   },
-  {
-    id: 4,
-    date: "Feb 05, 2024",
-    title: "Protecting Your Assets: A Guide to Modern Data Encryption",
-    image: "/images/pages/news-insights/image-1.jpg",
-    link: "#"
-  },
-  {
-    id: 5,
-    date: "Feb 12, 2024",
-    title: "Zero Trust Architecture: Why Your Network Needs a New Approach",
-    image: "/images/pages/news-insights/image-2.jpg",
-    link: "#"
-  },
-  {
-    id: 6,
-    date: "Mar 01, 2024",
-    title: "The Role of AI in Proactive Threat Detection and Response",
-    image: "/images/pages/news-insights/image 3.jpg",
-    link: "#"
-  }
+
 ];
 
 export default function Insights() {

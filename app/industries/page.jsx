@@ -29,13 +29,7 @@ export default function Industries() {
       image: "/images/pages/industry/card-image-3.svg",
       icon: "/images/pages/industry/card-icon-3.svg"
     },
-    {
-      id: 4,
-      title: "Energy, Utilities & Critical Infrastructure",
-      desc: "Operational technology awareness and controls ensuring reliability in regulated environments.",
-      image: "/images/pages/industry/card-image-4.png",
-      icon: "/images/pages/industry/card-icon-4.svg"
-    },
+
   ];
 
   const handleScroll = () => {
